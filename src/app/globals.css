@@ -1,26 +1,327 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui/theme" {
+  name: "hcdc";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f4f4f4;
+  --color-base-300: #e5e5e5;
+  --color-base-content: #111111;
+
+  --color-primary: #b00000;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #1d3f73;
+  --color-secondary-content: #ffffff;
+
+  --color-neutral: #102327;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #2563eb;
+  --color-info-content: #ffffff;
+
+  --color-success: #16a34a;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #111111;
+
+  --color-error: #dc2626;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 0.2rem;
+  --radius-field: 0.2rem;
+  --radius-box: 0.2rem;
+
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  min-height: 100vh;
+  background: #f4f4f4;
+  color: #111111;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main layout */
+.hcdc-page {
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+.hcdc-content {
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+/* Mobile top bar only */
+.hcdc-mobilebar {
+  height: 54px;
+  background: #b00000;
+  color: #ffffff;
+  border-bottom: 1px solid #8f0000;
+}
+
+/* Sidebar */
+.hcdc-sidebar {
+  background: #102327;
+  color: #ffffff;
+}
+
+.hcdc-sidebar-muted {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hcdc-nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+  font-weight: 700;
+}
+
+.hcdc-nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.hcdc-nav-active {
+  background: #b00000 !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  border-radius: 0;
+}
+
+/* Text */
+.hcdc-page-title {
+  color: #111111;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.hcdc-muted {
+  color: #4b5563;
+}
+
+/* Cards */
+.hcdc-card {
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  color: #111111;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Buttons */
+.hcdc-btn-primary {
+  background: #b00000;
+  color: #ffffff;
+  border: 1px solid #b00000;
+  font-weight: 800;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.hcdc-btn-primary:hover {
+  background: #8f0000;
+  border-color: #8f0000;
+}
+
+.hcdc-btn-secondary {
+  background: #1d3f73;
+  color: #ffffff;
+  border: 1px solid #1d3f73;
+  font-weight: 800;
+  border-radius: 0.2rem;
+}
+
+.hcdc-btn-secondary:hover {
+  background: #17345f;
+  border-color: #17345f;
+}
+
+.hcdc-btn-outline {
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid #b8b8b8;
+  font-weight: 800;
+  border-radius: 0.2rem;
+}
+
+.hcdc-btn-outline:hover {
+  background: #f5f5f5;
+  border-color: #b00000;
+  color: #b00000;
+}
+
+/* DaisyUI button override */
+.btn-primary,
+.btn-error {
+  background-color: #b00000 !important;
+  border-color: #b00000 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-error:hover {
+  background-color: #8f0000 !important;
+  border-color: #8f0000 !important;
+}
+
+/* Forms */
+.input,
+.select,
+.textarea,
+.file-input {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #cfcfcf !important;
+  border-radius: 0.2rem !important;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus,
+.file-input:focus {
+  outline: 2px solid rgba(176, 0, 0, 0.25) !important;
+  border-color: #b00000 !important;
+}
+
+label {
+  color: #111111;
+}
+
+.checkbox {
+  background-color: #ffffff !important;
+  border: 1px solid #777777 !important;
+}
+
+.checkbox:checked {
+  background-color: #b00000 !important;
+  border-color: #b00000 !important;
+}
+
+/* File input button */
+.file-input::file-selector-button {
+  background: #102327 !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 800;
+}
+
+/* Tables */
+.hcdc-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #111111;
+}
+
+.hcdc-table th {
+  background: #e9e9e9;
+  color: #222222;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0.85rem;
+  border-bottom: 1px solid #d6d6d6;
+  text-align: left;
+}
+
+.hcdc-table td {
+  padding: 0.85rem;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.95rem;
+  color: #111111;
+}
+
+.hcdc-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Badges */
+.hcdc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+/* Status notice */
+.hcdc-status-note {
+  border: 1px solid #d7d7d7;
+  background: #f8f8f8;
+  color: #111111;
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Comments / replies */
+.hcdc-message {
+  max-width: 34rem;
+  border: 1px solid #d7d7d7;
+  background: #ffffff;
+  padding: 0.85rem;
+  color: #111111;
+}
+
+.hcdc-message-student {
+  border-color: #efcaca;
+  background: #fff7f7;
+}
+
+.hcdc-message-staff {
+  border-color: #d7d7d7;
+  background: #ffffff;
+}
+
+.hcdc-message-author {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #374151;
+}
+
+.hcdc-message-time {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: #6b7280;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 0.2rem;
+}
+
+/* Better responsive behavior */
+@media (max-width: 768px) {
+  .hcdc-table th,
+  .hcdc-table td {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+
+  .hcdc-card {
+    box-shadow: none;
+  }
 }
