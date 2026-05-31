@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Student Concern Reporting System
 
-## Getting Started
+A web-based reporting system for Holy Cross of Davao College that allows students to submit school-related concerns, department staff to manage assigned reports, and administrators to monitor the full reporting workflow.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The Student Concern Reporting System is designed to make school concern reporting more organized, trackable, and department-based. Students can submit concerns to the appropriate department or office, department staff can respond and update report status, and administrators can manage users, departments, and all submitted reports.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Student
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Register using an official HCDC email address
+- Login securely
+- Submit reports or school concerns
+- Add report details such as category, urgency, location, and description
+- Upload photo evidence
+- View submitted reports
+- Track report status
+- Reply to department staff through comments
+- Receive notifications
+- View personal profile information
 
-## Learn More
+### Department Staff
 
-To learn more about Next.js, take a look at the following resources:
+- View reports assigned to their department
+- View complete report information
+- View student information for non-anonymous reports
+- Reply to student reports
+- Update report status
+- Transfer reports to another department when needed
+- Receive notifications for new or transferred reports
+- View report timeline and activity history
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Admin
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Monitor all reports
+- View full report details
+- Manage departments and offices
+- Create department staff and admin accounts
+- Manage users and profile details
+- View activity logs
+- Review report timelines and comments
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS / DaisyUI
+- **Database:** Supabase PostgreSQL
+- **Authentication:** Supabase Auth
+- **Storage:** Supabase Storage
+- **Deployment:** Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```txt
+src/
+├── app/
+│   ├── admin/
+│   │   ├── dashboard/
+│   │   ├── reports/
+│   │   ├── departments/
+│   │   ├── users/
+│   │   ├── activity-logs/
+│   │   └── profile/
+│   ├── department/
+│   │   ├── dashboard/
+│   │   ├── reports/
+│   │   ├── notifications/
+│   │   └── profile/
+│   ├── student/
+│   │   ├── dashboard/
+│   │   ├── reports/
+│   │   ├── notifications/
+│   │   └── profile/
+│   ├── login/
+│   ├── register/
+│   └── api/
+├── components/
+├── lib/
+└── styles/
