@@ -1,3 +1,6 @@
+Copy this and replace your current `README.md`.
+
+````md
 # Student Concern Reporting System
 
 A web-based reporting system for Holy Cross of Davao College that allows students to submit school-related concerns, department staff to manage assigned reports, and administrators to monitor the full reporting workflow.
@@ -80,3 +83,31 @@ src/
 ├── components/
 ├── lib/
 └── styles/
+````
+
+## Build Command
+```bash
+npm run build
+```
+
+## Start Command
+```bash
+npm start
+```
+
+## Development Command
+```bash
+npm run dev
+```
+
+## System Name
+**Student Concern Reporting System**
+
+## Institution
+**Holy Cross of Davao College**
+
+## Purpose
+This system was developed to help improve the reporting, routing, tracking, and resolution of student concerns within the school.
+
+## License
+This project is for academic and educational use.
